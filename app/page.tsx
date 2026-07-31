@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useState, type FormEvent } from "react";
 
 const experience = [
   {
@@ -35,7 +36,7 @@ const experience = [
       "Organización del equipo Media",
       "Apoyo en campañas y eventos",
     ],
-    years: "Experiencia reciente",
+    years: "Hasta junio de 2026",
   },
 ];
 
@@ -141,6 +142,19 @@ const stats = [
 ];
 
 export default function Home() {
+  const [form, setForm] = useState({ name: "", email: "", project: "", message: "" });
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const subject = encodeURIComponent(`Proyecto Minecraft — ${form.project || "Nuevo contacto"}`);
+    const body = encodeURIComponent(
+      `Nombre: ${form.name}\nEmail: ${form.email}\nServidor o proyecto: ${form.project}\n\nMensaje:\n${form.message}`
+    );
+    window.location.href = `mailto:auay77802@gmail.com?subject=${subject}&body=${body}`;
+    setSent(true);
+  };
+
   return (
     <SiteShell>
       <main className="relative isolate z-0 px-4 pb-24 pt-8 sm:px-6 lg:px-8">
@@ -173,7 +187,7 @@ export default function Home() {
                 <Link href="#contact" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 font-medium text-zinc-100 transition hover:border-fuchsia-400/30 hover:bg-white/10">
                   Contactar
                 </Link>
-                <a href="https://discord.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-fuchsia-400/25 bg-fuchsia-500/10 px-6 py-3 font-medium text-fuchsia-200 transition hover:bg-fuchsia-500/20">
+                <a href="https://discord.gg/9AuybGHuSd" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-fuchsia-400/25 bg-fuchsia-500/10 px-6 py-3 font-medium text-fuchsia-200 transition hover:bg-fuchsia-500/20">
                   <Bot size={16} /> Discord
                 </a>
               </div>
@@ -296,7 +310,7 @@ export default function Home() {
                 <p className="mt-1 text-sm text-cyan-300">Ex Staff • MienFun</p>
               </div>
               <div className="rounded-full border border-white/10 bg-zinc-950/70 px-3 py-1 text-xs uppercase tracking-[0.25em] text-zinc-400">
-                Experiencia reciente en Minecraft
+                Staff hasta junio de 2026
               </div>
             </div>
             <p className="mt-5 max-w-3xl leading-8 text-zinc-400">
@@ -413,23 +427,23 @@ export default function Home() {
               <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">Listo para trabajar en un proyecto serio y con visión</h2>
               <p className="mt-5 text-lg leading-8 text-zinc-400">Si buscas alguien que aporte orden, estrategia y presencia a tu proyecto, podemos hablar.</p>
               <div className="mt-8 space-y-4 text-zinc-300">
-                <a href="https://discord.com" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-zinc-950/60 p-3 transition hover:border-cyan-400/30 hover:text-cyan-200">
-                  <Bot size={18} className="text-cyan-300" /> arnau#0001
+                <a href="https://discord.gg/9AuybGHuSd" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-zinc-950/60 p-3 transition hover:border-cyan-400/30 hover:text-cyan-200">
+                  <Bot size={18} className="text-cyan-300" /> Arnau · discord.gg/9AuybGHuSd
                 </a>
-                <a href="https://github.com/arnau" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-zinc-950/60 p-3 transition hover:border-cyan-400/30 hover:text-cyan-200">
-                  <Compass size={18} className="text-cyan-300" /> github.com/arnau
+                <a href="https://github.com/sanchezmas195-web" target="_blank" rel="noreferrer" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-zinc-950/60 p-3 transition hover:border-cyan-400/30 hover:text-cyan-200">
+                  <Compass size={18} className="text-cyan-300" /> github.com/sanchezmas195-web
                 </a>
-                <a href="mailto:hello@arnau.dev" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-zinc-950/60 p-3 transition hover:border-cyan-400/30 hover:text-cyan-200">
-                  <Sparkles size={18} className="text-cyan-300" /> hello@arnau.dev
+                <a href="mailto:auay77802@gmail.com" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-zinc-950/60 p-3 transition hover:border-cyan-400/30 hover:text-cyan-200">
+                  <Sparkles size={18} className="text-cyan-300" /> auay77802@gmail.com
                 </a>
               </div>
             </div>
             <div className="rounded-[2rem] border border-white/10 bg-zinc-950/70 p-8 backdrop-blur-xl">
               <div className="mb-6 flex flex-wrap gap-3">
-                <a href="mailto:hello@arnau.dev?subject=Proyecto%20Minecraft" className="rounded-full border border-cyan-400/40 bg-cyan-400/15 px-5 py-2.5 text-sm font-medium text-cyan-200 transition hover:bg-cyan-400/25">Escribir por email</a>
-                <a href="https://discord.com" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-fuchsia-400/30 hover:bg-white/10">Abrir Discord</a>
+                <a href="mailto:auay77802@gmail.com?subject=Proyecto%20Minecraft" className="rounded-full border border-cyan-400/40 bg-cyan-400/15 px-5 py-2.5 text-sm font-medium text-cyan-200 transition hover:bg-cyan-400/25">Escribir por email</a>
+                <a href="https://discord.gg/9AuybGHuSd" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-medium text-zinc-100 transition hover:border-fuchsia-400/30 hover:bg-white/10">Abrir Discord</a>
               </div>
-              <form className="space-y-5">
+              <form className="space-y-5" onSubmit={handleSubmit}>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <label htmlFor="contact-name" className="sr-only">
                     Nombre
@@ -437,6 +451,9 @@ export default function Home() {
                   <input
                     id="contact-name"
                     name="name"
+                    required
+                    value={form.name}
+                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                     className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-cyan-400/40"
                     placeholder="Nombre"
                   />
@@ -447,6 +464,9 @@ export default function Home() {
                     id="contact-email"
                     name="email"
                     type="email"
+                    required
+                    value={form.email}
+                    onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                     className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-cyan-400/40"
                     placeholder="Email"
                   />
@@ -457,6 +477,8 @@ export default function Home() {
                 <input
                   id="contact-project"
                   name="project"
+                  value={form.project}
+                  onChange={(e) => setForm((f) => ({ ...f, project: e.target.value }))}
                   className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-cyan-400/40"
                   placeholder="Servidor o proyecto"
                 />
@@ -467,11 +489,17 @@ export default function Home() {
                   id="contact-message"
                   name="message"
                   rows={6}
+                  required
+                  value={form.message}
+                  onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                   className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition focus:border-cyan-400/40"
                   placeholder="Cuéntame sobre tu idea, comunidad o objetivo de crecimiento..."
                 />
-                <button className="rounded-full border border-cyan-400/40 bg-cyan-400/15 px-6 py-3 font-medium text-cyan-200 transition hover:bg-cyan-400/25">
-                  Hablemos de tu proyecto
+                <button
+                  type="submit"
+                  className="rounded-full border border-cyan-400/40 bg-cyan-400/15 px-6 py-3 font-medium text-cyan-200 transition hover:bg-cyan-400/25"
+                >
+                  {sent ? "¡Abriendo tu correo...!" : "Hablemos de tu proyecto"}
                 </button>
               </form>
             </div>
@@ -487,9 +515,9 @@ export default function Home() {
             </div>
           </div>
           <div className="flex gap-4">
-            <a href="https://discord.com" target="_blank" rel="noreferrer" className="transition hover:text-cyan-300">Discord</a>
-            <a href="https://github.com/arnau" target="_blank" rel="noreferrer" className="transition hover:text-cyan-300">GitHub</a>
-            <a href="mailto:hello@arnau.dev" className="transition hover:text-cyan-300">Email</a>
+            <a href="https://discord.gg/9AuybGHuSd" target="_blank" rel="noreferrer" className="transition hover:text-cyan-300">Discord</a>
+            <a href="https://github.com/sanchezmas195-web" target="_blank" rel="noreferrer" className="transition hover:text-cyan-300">GitHub</a>
+            <a href="mailto:auay77802@gmail.com" className="transition hover:text-cyan-300">Email</a>
           </div>
         </footer>
       </main>
