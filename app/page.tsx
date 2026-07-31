@@ -121,16 +121,16 @@ const services = [
 ];
 
 const skills = [
-  ["Marketing", 95],
-  ["Gestión de Creadores", 95],
-  ["Discord", 95],
+  ["Marketing", 90],
+  ["Gestión de Creadores", 90],
+  ["Discord", 85],
   ["Organización", 95],
-  ["TikTok", 90],
-  ["YouTube", 90],
-  ["Branding", 90],
-  ["Comunicación", 95],
-  ["Trabajo en Equipo", 95],
-  ["Liderazgo", 90],
+  ["TikTok", 85],
+  ["YouTube", 80],
+  ["Branding", 80],
+  ["Comunicación", 88],
+  ["Trabajo en Equipo", 92],
+  ["Liderazgo", 86],
 ];
 
 const stats = [
@@ -138,21 +138,6 @@ const stats = [
   { value: "+100", label: "Piezas de contenido" },
   { value: "+10", label: "Eventos coordinados" },
   { value: "+5", label: "Equipos liderados" },
-];
-
-const testimonials = [
-  {
-    quote: "Una visión clara, profesional y muy útil para crecer una comunidad con identidad.",
-    author: "Cliente futuro",
-  },
-  {
-    quote: "Muy sólido en organización, branding y comunicación con creadores.",
-    author: "Partner futuro",
-  },
-  {
-    quote: "Transforma la presencia del proyecto y le da una cara mucho más seria y potente.",
-    author: "Network futuro",
-  },
 ];
 
 export default function Home() {
@@ -274,19 +259,19 @@ export default function Home() {
               <p className="text-sm uppercase tracking-[0.35em] text-cyan-300">Sobre mí</p>
               <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">Media Manager especializado en comunidades de Minecraft.</h2>
               <p className="mt-6 text-lg leading-8 text-zinc-400">
-                Soy un profesional enfocado en el crecimiento de proyectos de Minecraft a través de marketing, gestión de creadores, organización de equipos Media y una comunicación clara entre staff, comunidad y contenido. Mi trabajo está orientado a construir una imagen sólida, atraer nuevos jugadores y hacer que cada pieza de contenido aporte valor real al proyecto.
+                Soy un profesional que ayuda a proyectos de Minecraft a encontrar claridad, orden y un contenido alineado con su identidad. Mi foco está en procesos útiles para el equipo Media, campañas que respalden la marca y una comunicación que haga que el servidor se perciba más profesional y atractivo.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                "Gestión de Creadores",
-                "Organización del equipo Media",
-                "Marketing",
-                "Branding",
-                "Estrategias de crecimiento",
-                "Organización de eventos",
-                "Campañas publicitarias",
-                "Coordinación con staff y creadores",
+                "Gestión de creadores",
+                "Procesos para el equipo Media",
+                "Campañas con foco en resultados",
+                "Eventos y activaciones",
+                "Posicionamiento de marca",
+                "Comunicación con staff y creadores",
+                "Contenidos estratégicos",
+                "Coordinación de equipos",
               ].map((item) => (
                 <div key={item} className="rounded-2xl border border-white/10 bg-zinc-950/60 p-5 text-zinc-300 shadow-[0_0_20px_rgba(255,255,255,0.03)]">
                   <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-cyan-400/10 text-cyan-300">
@@ -308,14 +293,14 @@ export default function Home() {
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div>
                 <p className="text-2xl font-semibold text-white">MienFun</p>
-                <p className="mt-1 text-sm text-cyan-300">Ex Staff</p>
+                <p className="mt-1 text-sm text-cyan-300">Ex Staff • MienFun</p>
               </div>
               <div className="rounded-full border border-white/10 bg-zinc-950/70 px-3 py-1 text-xs uppercase tracking-[0.25em] text-zinc-400">
-                Experiencia reciente
+                Experiencia reciente en Minecraft
               </div>
             </div>
             <p className="mt-5 max-w-3xl leading-8 text-zinc-400">
-              Desarrollé un trabajo orientado a la organización del contenido, la gestión de la comunicación del proyecto y el apoyo al crecimiento de la comunidad desde una visión más estratégica y profesional.
+              Apoyé la coordinación del contenido y la comunicación entre staff y creadores para que el equipo Media trabajara con procesos más claros y resultados más consistentes.
             </p>
             <div className="mt-6 grid gap-3 md:grid-cols-3">
               {experience[0].highlights.map((item) => (
@@ -405,13 +390,16 @@ export default function Home() {
 
         <section className="mx-auto max-w-7xl px-2 py-24 lg:px-8">
           <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/8 to-white/3 p-8 backdrop-blur-xl">
-            <p className="text-sm uppercase tracking-[0.35em] text-cyan-300">Testimonios</p>
-            <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">Listo para sumar opiniones reales en el futuro</h2>
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
-              {testimonials.map((item) => (
-                <div key={item.author} className="rounded-[1.25rem] border border-white/10 bg-zinc-950/60 p-6">
-                  <p className="leading-7 text-zinc-300">“{item.quote}”</p>
-                  <p className="mt-4 text-sm uppercase tracking-[0.3em] text-cyan-300">{item.author}</p>
+            <p className="text-sm uppercase tracking-[0.35em] text-cyan-300">Resultados</p>
+            <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">Resultados verificables en proyectos de Minecraft</h2>
+            <p className="mt-6 max-w-3xl leading-8 text-zinc-400">
+              Más de 100 piezas de contenido coordinadas, 25 campañas guiadas y 10 eventos organizados en proyectos de Minecraft — con foco en crecimiento, coherencia de marca y presencia más profesional.
+            </p>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {stats.map((stat) => (
+                <div key={stat.label} className="rounded-[1.25rem] border border-white/10 bg-zinc-950/60 p-6">
+                  <p className="text-4xl font-semibold text-white">{stat.value}</p>
+                  <p className="mt-2 text-sm uppercase tracking-[0.3em] text-zinc-400">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -483,7 +471,7 @@ export default function Home() {
                   placeholder="Cuéntame sobre tu idea, comunidad o objetivo de crecimiento..."
                 />
                 <button className="rounded-full border border-cyan-400/40 bg-cyan-400/15 px-6 py-3 font-medium text-cyan-200 transition hover:bg-cyan-400/25">
-                  Enviar mensaje
+                  Hablemos de tu proyecto
                 </button>
               </form>
             </div>
